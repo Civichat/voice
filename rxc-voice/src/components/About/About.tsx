@@ -25,14 +25,14 @@ function About() {
           <img src={collab_img} alt="collaboration" />
         </div>
         <div id="first-panel" className="subpanel_text">
-          <h2>Introducing RxC Voice.</h2>
+          <h2>RxC Voiceをご紹介します。</h2>
           <p>
-            <strong>RxC Voice</strong> is a modular way for groups to evolve and make decisions democratically.
+            <strong>Voice</strong> は、グループが進化し、民主的な意思決定を行うためのモジュール方式です。
           </p>
           <ul className="bullets">
-            <li>Form a group.</li>
-            <li>Explore a shared problem.</li>
-            <li>Identify actionable compromises.</li>
+            <li>グループを作る.</li>
+            <li>共通の問題を探る。</li>
+            <li>行動可能な侵害を特定する。</li>
           </ul>
         </div>
       </section>
@@ -41,21 +41,22 @@ function About() {
           <img src={group_img} alt="form a group" />
         </div>
         <div className="subpanel_text">
-          <h2>Form a group.</h2>
+          <h2>グループを作る</h2>
           <p>
-            Voice helps groups <strong>surface leadership</strong> by encouraging participants to signal who they trust.
+            Voiceはグループを支援します
+            <strong>サーフェイスリーダーシップ</strong> 参加者が信頼できる人を示すように促すことで
           </p>
           <ul className="bullets">
-            <li><strong>Everyone’s voice is equal</strong>: participants start with an equal number of voice credits.</li>
-            <li>Optionally, participants may be permitted to delegate some of their voice credits to others, so <strong>trust and specialized knowledge is accounted for.</strong></li>
-            <li>Widely trusted individuals can receive a voice credit bonus via <a
+            <li><strong>みんなの声は平等</strong>参加者は同数の音声クレジットでスタートします。</li>
+            <li>オプションとして、参加者は自分の音声クレジットの一部を他の人に委譲することができますので <strong>信頼と専門的な知識が計上されている。</strong></li>
+            <li>広く信頼される人物には、以下の方法で音声クレジットボーナスが付与されます。 <a
               href="http://wtfisqf.com"
               target="_blank"
               rel="noopener nofollow noreferrer"
               className="inline-link"
             >Quadratic Funding</a>.</li>
-            <li><strong>The group grows organically</strong> when participants transfer voice credits to new contacts.</li>
-            <li>Even after delegating, <strong>everyone can participate directly</strong>.</li>
+            <li><strong>グループは有機的に成長する</strong> 参加者が新しい連絡先に音声クレジットを転送するとき。</li>
+            <li>委任した後でも, <strong>だれでも直接参加できる</strong>.</li>
           </ul>
         </div>
       </section>
@@ -64,16 +65,16 @@ function About() {
           <img src={convo_img} alt="conversation" />
         </div>
         <div className="subpanel_text">
-          <h2>Explore a shared problem.</h2>
+          <h2>共通の課題を探る</h2>
           <p>
-            Voice makes it easy to <strong>explore a shared problem</strong>, identifying and building on areas of consensus.
+            Voiceで簡単に <strong>共通の課題を探ることができ、</strong>, コンセンサスが得られている分野を特定し、その上に構築する。
           </p>
           <ul className="bullets">
-            <li><strong>Everyone’s voice is heard</strong> in a Pol.is conversation.</li>
-            <li>Users can share thoughts, feelings, opinions, values, facts, or principles they feel are relevant.</li>
-            <li>There are no replies or threads, so <strong>disagreements don’t derail the agenda</strong>.</li>
-            <li>Users iterate on comments they don’t quite agree with, and thereby <strong>ideas evolve toward consensus</strong>.</li>
-            <li>Pol.is outputs meaningful data about which comments built consensus and which were divisive.</li>
+            <li><strong>みんなの声が届く</strong> Pol.is を使った会話で.</li>
+            <li>ユーザーは、自分が関連すると思う考え、感情、意見、価値観、事実、または原則を共有することができます。.</li>
+            <li>返信やスレッドがないため <strong>異論は異論で論破せよ</strong>.</li>
+            <li>ユーザーは、自分が納得できないコメントに対して、繰り返し発言することで <strong>意見がまとまる</strong>.</li>
+            <li>Pol.isは、どのコメントがコンセンサスを形成し、どのコメントが賛否を分けたかについて、意味のあるデータを出力します。</li>
           </ul>
         </div>
       </section>
@@ -82,34 +83,35 @@ function About() {
           <img src={handshake_img} alt="handshake" />
         </div>
         <div className="subpanel_text">
-          <h2>Identify actionable compromises.</h2>
+          <h2>行動可能な侵害を特定する。.</h2>
           <p>
-            Voice helps groups <strong>define their options</strong> and <strong>find compromises</strong> that lead to collective action.
+            Voiceはグループを支援します
+            <strong>選択を決め、</strong> <strong>集団行動につながる妥協点</strong>を見出す。
           </p>
           <ul className="bullets">
-            <li><strong>Ballot construction is decentralized</strong>. A ballot of actionable options for the group is constructed from user submissions in the Pol.is conversation.</li>
-            <li>An appointed curator ensures that the proposals are coherent. Users can reject the ballot if they disapprove of the curation.</li>
-            <li>A shared decision is reached using <a
+            <li><strong>投票用紙の作成は分散化されている</strong>. Pol.is会話でユーザーが投稿した内容から、グループ内で実行可能な選択肢の投票が構築されます。</li>
+            <li>任命されたキュレーターは、提案の一貫性を保証する。ユーザーは、キュレーションに不服がある場合、投票を拒否することができます。</li>
+            <li>を用いて、共有の意思決定に至る。 <a
               href="https://quadraticvote.radicalxchange.org/"
               target="_blank"
               rel="noopener nofollow noreferrer"
               className="inline-link"
             >Quadratic Voting</a> (QV).</li>
-            <li>With QV, users can express the magnitude of their preferences, which means <strong>apathetic majorities don’t swing decisions</strong>.</li>
-            <li>By imposing an increasing cost on strong preferences, <strong>QV incentivizes coalition building and compromise</strong>.</li>
+            <li>QVでは、ユーザーが自分の好みの大きさを表現できる、つまり<strong>無気力は判断を誤らせる</strong>.</li>
+            <li>強い選好に増加コストを課すことで, <strong>QVは連立と妥協を奨励する</strong>.</li>
           </ul>
         </div>
       </section>
       <section id="last-panel">
         <div>
-          <h2>Group decision making is a public good.</h2>
+          <h2>集団的意思決定は公共財である</h2>
           <p>
-            RxC Voice is an open-source <a
+          RxC Voiceは、オープンソース <a
               href="https://github.com/RadicalxChange/rxc-voice"
               target="_blank"
               rel="noopener nofollow noreferrer"
               className="inline-link"
-            >project</a> maintained by the <a
+            >プロジェクトです</a> RadicalxChangeによって作られている<a
               href="https://radicalxchange.org/"
               target="_blank"
               rel="noopener nofollow noreferrer"
@@ -137,64 +139,7 @@ function About() {
         </div>
       </section>
     </div>
-      <h2 className="privacy-title">Privacy Policy</h2>
-      <h3>Definitions</h3>
-      <ul className="bullets">
-        <li><strong>RxC:</strong> RadicalxChange Foundation Ltd. We can be reached by mail at 137 Montague St. #298, Brooklyn NY 11201.</li>
-        <li><strong>GDPR:</strong> General Data Protection Regulation Act.</li>
-        <li><strong>Data Controller:</strong> Data Controller means the natural or legal person who determines the purposes whether or how any personal information are processed.</li>
-        <li><strong>Data Processor:</strong> Data Processor means any natural or legal person who processes the data on behalf of the Data Controller.</li>
-        <li><strong>Data Subject:</strong> Data Subject is any living individual who is using our service and is the subject of Personal Data.</li>
-      </ul>
-      <h3>Principles for processing personal data</h3>
-      <ul className="bullets">
-        <li><strong>Fairness and legality.</strong> When we process personal data, the individual rights of the Data Subjects must be protected. All personal data must be collected and processed in a legal and fair manner.</li>
-        <li><strong>Restricted to a specific purpose.</strong> The personal data of Data Subject must be processed only for specific purposes.</li>
-        <li><strong>Transparency.</strong> The Data Subject must be informed of how their data is being collected, processed and used.</li>
-      </ul>
-      <h3>What personal data we collect and process</h3>
-      <p>RxC may collect several different types of personal data for various purposes. Personal Data may include, without restriction:</p>
-      <ul className="bullets">
-        <li>Email address</li>
-        <li>First name and last name</li>
-      </ul>
-      <h3>How we use the personal data</h3>
-      <p>RxC uses the collected personal data for various purposes:</p>
-      <ul className="bullets">
-        <li>To provide you with services</li>
-        <li>To notify you about changes to our services and/or products</li>
-        <li>To provide customer support</li>
-        <li>To gather analysis or valuable information so that we can improve our services</li>
-        <li>To detect, prevent and address technical issues</li>
-      </ul>
-      <h3>Legal basis for collecting and processing personal data</h3>
-      <p>RxC’s legal basis for collecting and using the personal data described in this Data Protection Policy depends on the personal data we collect and the specific context in which we collect the information:</p>
-      <ul className="bullets">
-        <li>You have given RxC explicit or implicit permission to do so</li>
-        <li>RxC needs to comply with the law</li>
-      </ul>
-      <h3>Retention of personal data</h3>
-      <p>RxC will retain your personal information only for as long as is necessary for the purposes explained in this Policy.</p>
-      <p>RxC will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.</p>
-      <h3>Data protection rights</h3>
-      <p>If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what personal data we hold about you and if you want it to be removed from our systems, please contact us.</p>
-      <p>In certain circumstances, you have the following data protection rights:</p>
-      <ul className="bullets">
-        <li>The right to access, update or to delete the information we have on you</li>
-        <li>The right of rectification</li>
-        <li>The right to object</li>
-        <li>The right of restriction</li>
-        <li>The right to data portability</li>
-        <li>The right to withdraw consent</li>
-      </ul>
-      <h3>What personal data we collect and why</h3>
-      <p><strong>Contact forms</strong></p>
-      <p>If you would like to get involved as a volunteer, we ask for your information so we can work with you to find an appropriate way or you to contribute to our growing movement.</p>
-      <p>If you would like to receive our newsletter, your information goes through MailChimp, which is the Data Processor for that activity.</p>
-      <p><strong>Embedded content from other websites</strong></p>
-      <p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
-      <p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
-      <p>RadicalxChange Foundation’s website is: [https://www.radicalxchange.org](https://www.radicalxchange.org)</p>
+      
     </div>
   );
 }

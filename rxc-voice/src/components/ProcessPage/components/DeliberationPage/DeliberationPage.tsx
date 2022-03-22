@@ -50,11 +50,11 @@ function DeliberationPage(props: {process: Process, conversation: Conversation, 
   return (
     <div className="polis-page">
       <div className="body">
-      <h1>Deliberation</h1>
+      <h1>熟議</h1>
       <h2 className="content-header">{props.process.title}</h2>
       <div className="explain-text">
-        <p>Join us as we collectively draft a ballot of proposals to vote on in our election! Submit proposals, share your thoughts, and show your agreement or disagreement with other delegates’ submissions. This is your chance to influence the ballot of items that voters consider in the final election.</p>
-        <p>Want to know more about who else gets a say in this process? Go back to the Delegation Stage to see how the delegation was determined democratically.</p>
+        <p>Join 選挙で投票するための提案をまとめて起草してみませんか？提案書を提出し、自分の考えを共有し、他の代表者の提出物に対する賛成・反対を表明してください。</p>
+        <p>これは、最終的な選挙で投票者が検討する項目の投票用紙に影響を与えるチャンスです。</p>
       </div>
       {(moment() < moment(props.conversation.end_date)) ? (
         (moment() > moment(props.conversation.start_date)) ? (
@@ -89,20 +89,20 @@ function DeliberationPage(props: {process: Process, conversation: Conversation, 
                 ) : null}
                 </>
               ) : (
-                <p className="insufficient-credits">Sorry! You do not have enough voice credits to participate in Deliberation or Election. The threshold for participation is 25 voice credits.</p>
+                <p className="insufficient-credits">申し訳ございません。審議または選挙に参加するための十分なボイスクレジットがありません。参加資格は25ボイスクレジットです。.</p>
               )}
               </>
             ) : (
               <div className="body">
-                <h3>Sorry, something went wrong. Head back to home to find what you're looking for.</h3>
+                <h3>申し訳ありませんが、何か問題が発生しました。ホームに戻り、お探しのものを見つけてください。.</h3>
               </div>
             )
         ) : (
-          <p className="explain-text"><strong>The Deliberation Stage begins on {moment(props.conversation.start_date).format('MMMM Do YYYY, h:mm a')}</strong></p>
+          <p className="explain-text"><strong>審議ステージの開始日{moment(props.conversation.start_date).format('MMMM Do YYYY, h:mm a')}</strong></p>
         )
       ) : (
         <div className="body">
-          <p className="explain-text"><strong>The Deliberation Stage has concluded. {props.conversation.report_id ? "You can see the results of the conversation below!" : ""}</strong></p>
+          <p className="explain-text"><strong>審議ステージが終了しました {props.conversation.report_id ? "You can see the results of the conversation below!" : ""}</strong></p>
             {props.conversation.report_id ? (
               <iframe
                 title="conversation-results"

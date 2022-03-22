@@ -25,8 +25,8 @@ function ManageEvents() {
 
   return (
     <div className="home">
-      <h1 className="title">Manage My Events</h1>
-      <p>Manage the events that you created.</p>
+      <h1 className="title">自分のイベントを管理する</h1>
+      <p>あなたが作成したイベントを管理することができます.</p>
       {(activeProcesses?.length || pastProcesses?.length) && user ? (
         <div className="content">
           {activeProcesses?.length && user.processes_managed.length ? (
@@ -53,7 +53,7 @@ function ManageEvents() {
           ) : null}
         </div>
         ) : (
-          <p className="no-events">If you create your own events, you can manage them here.</p>
+          <p className="no-events">自分でイベントを作成した場合は、ここで管理することができます。</p>
         )}
     </div>
   );

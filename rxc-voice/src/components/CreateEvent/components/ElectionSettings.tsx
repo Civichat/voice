@@ -7,11 +7,11 @@ function ElectionSettings(props: {settings: Election, reducer: any}) {
 
   return (
     <div className="event-section">
-      <label>Election</label>
-      <p>Choose the settings for the Election Stage</p>
+      <label>投票・</label>
+      <p>Election Stageの設定を選択する</p>
       <div className="event-section">
-        <label>Election Stage Title</label>
-        <p>Add a custom title to this stage.</p>
+        <label>投票ステージのタイトル</label>
+        <p>このステージの名前を追加してください.</p>
         <div className="event-section_form">
           <input
             type="text"
@@ -27,8 +27,8 @@ function ElectionSettings(props: {settings: Election, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Election Start Date</label>
-        <p>When would you like this stage to begin?</p>
+        <label>投票開始日</label>
+        <p>いつ投票を開始しますか？</p>
         <div className="event-section_form">
           <Datetime
             className="event-section_datetime"
@@ -42,8 +42,8 @@ function ElectionSettings(props: {settings: Election, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Election End Date</label>
-        <p>When would you like this stage to end?</p>
+        <label>投票終了日</label>
+        <p>いつ投票を締め切りますか？</p>
         <div className="event-section_form">
           <Datetime
             className="event-section_datetime"

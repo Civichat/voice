@@ -138,41 +138,41 @@ function CreateEvent() {
   return (
     <form className="create-event" onSubmit={createEvent}>
       <div className="create-event_header">
-        <h1>Create a new Event</h1>
-        <p>Fill out the information below to create your event.</p>
+        <h1>新しくイベントを作る</h1>
+        <p>下記のイベント情報を埋めてください</p>
       </div>
-      <h2>General Information</h2>
-      <p>Fill out the general information for this event.</p>
+      <h2>一般情報</h2>
+      <p>このイベントの一般情報を埋めてください.</p>
       <div className="event-section">
-        <label>Event Title</label>
-        <p>Add a title to this event.</p>
+        <label>タイトル</label>
+        <p>このイベントのタイトルを入力してください</p>
         <div className="event-section_form">
           <input
             type="text"
             id="stage_title"
             className="event-section_form_input"
-            placeholder="Event Title"
+            placeholder="イベントのタイトル"
             value={eventTitle}
             onChange={(e) => setEventTitle(e.target.value)}
           />
         </div>
       </div>
       <div className="event-section">
-        <label>Event Description</label>
-        <p>Add a description to this event.</p>
+        <label>詳細</label>
+        <p>このイベントの詳細情報を入力してください</p>
         <div className="event-section_form">
           <textarea
             id="invitation-message"
             className="event-section_form_input"
-            placeholder="Event Description"
+            placeholder="イベントの詳細"
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
           />
         </div>
       </div>
       <div className="event-section">
-        <label>Event Start Date</label>
-        <p>When would you like this event to begin?</p>
+        <label>イベント開始日</label>
+        <p>このイベントをいつ始めたいですか?</p>
         <div className="event-section_form">
           <Datetime
             className="event-section_datetime"
@@ -182,8 +182,8 @@ function CreateEvent() {
         </div>
       </div>
       <div className="event-section">
-        <label>Event End Date</label>
-        <p>When would you like this event to end?</p>
+        <label>イベント終了日程</label>
+        <p>このイベントをいつ終了させたいですか</p>
         <div className="event-section_form">
           <Datetime
             className="event-section_datetime"
@@ -193,8 +193,8 @@ function CreateEvent() {
         </div>
       </div>
       <div className="event-section">
-        <label>Group</label>
-        <p>Which group is participating in this event?</p>
+        <label>グループ</label>
+        <p>このイベントに参加している団体は？</p>
         <div className="event-section_form checkbox-form">
           <input type="radio" className="checkbox-button" name="new_group" value="false" onChange={(e) => setNewGroup(e.target.value)} />
           {newGroup === "false" ? (
@@ -257,11 +257,11 @@ function CreateEvent() {
         </div>
       </div>
       <div className="event-section">
-        <label>Invitations</label>
-        <p>Invite people by email address. Current members of the group are invited automatically.</p>
+        <label>招待</label>
+        <p>メールアドレスで招待する 現在グループに参加しているメンバーは自動的に招待されます</p>
         <div className="event-section_form">
           {newGroup === "false" && existingGroup ? (
-            <label>Current Group Members
+            <label>今のグループのメンバー
               <textarea
                 id="existing-group_select_users"
                 className="event-section_form_input select-invites"
@@ -270,11 +270,11 @@ function CreateEvent() {
               />
             </label>
           ) : null}
-          <label>Invite New Participants
+          <label>新しい参加者を招待する
             <textarea
               id="new-invites_select_users"
               className="event-section_form_input select-invites"
-              placeholder="Add email addresses here, separated by newlines"
+              placeholder="ここにメールアドレスを改行で区切って追加します。"
               value={invites}
               onChange={(e) => setInvites(e.target.value)}
             />
@@ -282,27 +282,27 @@ function CreateEvent() {
         </div>
       </div>
       <div className="event-section">
-        <label>Invitation Message</label>
-        <p>Customize the invitation message that will be sent to all of the participants.</p>
+        <label>招待メッセージ</label>
+        <p>参加者全員に送信される招待メッセージをカスタマイズします。</p>
         <div className="event-section_form">
           <textarea
             id="invitation-message"
             className="event-section_form_input"
-            placeholder={"Welcome to RxC Voice -- we want to invite you to participate in the following collective decision: " + eventTitle}
+            placeholder={"RxC Voiceへようこそ -- 以下の集団決定へ参加するよう、あなたを招待したい。: " + eventTitle}
             value={invitationMessage}
             onChange={(e) => setInvitationMessage(e.target.value)}
           />
         </div>
       </div>
-      <h2>Event Settings</h2>
-      <p>Choose the settings for each stage of this event.</p>
+      <h2>イベント設定</h2>
+      <p>本イベントの各ステージの設定を選択する</p>
       {stages.map((stage: Stage) => (
         renderSettings(stage)
       ))}
       <button
         type="submit"
         >
-        Create Event
+        イベント作成
       </button>
     </form>
   );

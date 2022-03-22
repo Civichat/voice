@@ -20,11 +20,11 @@ function DelegationSettings(props: {settings: Delegation, reducer: any}) {
 
   return (
     <div className="event-section">
-      <label>Delegation</label>
-      <p>Choose the settings for the Delegation Stage</p>
+      <label>移譲</label>
+      <p>Delegation Stageの設定を選択する</p>
       <div className="event-section">
-        <label>Voice Credits per Voter</label>
-        <p>How many voice credits should each delegate start with?</p>
+        <label>投票者1人あたりのボイスクレジット</label>
+        <p>ボイスクレジットは何単位からスタートすればよいですか？</p>
         <div className="event-section_form">
           <input
             id="num-credits_input"
@@ -42,8 +42,8 @@ function DelegationSettings(props: {settings: Delegation, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Liquid Democracy</label>
-        <p>By default, delegates have the option to transfer any number of their voice credits to others in the group. Allow voice credit transfers?</p>
+        <label>リキッド・デモクラシー（液状民主主義）</label>
+        <p>デフォルトでは、代表者は自分の音声クレジットをグループ内の他の人にいくつでも譲渡できるオプションがあります。ボイスクレジットの譲渡を許可しますか？</p>
         <div className="event-section_form">
         <label className="event-section_form_input">
           <input
@@ -57,8 +57,8 @@ function DelegationSettings(props: {settings: Delegation, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Voice Credit Matching Fund</label>
-        <p>By default, voice credit transfers are matched according to the Quadratic Funding (QF) formula. You can set a limit on the amount of voice credits in the matching pool, or turn off this feature completely.</p>
+        <label>ボイスクレジットマッチングファンド</label>
+        <p>デフォルトでは、音声クレジットの転送はQF（Quadratic Funding）式にしたがってマッチングされます。マッチングプール内の音声クレジットの量に制限を設けるか、この機能を完全にオフにすることができます。.</p>
         <div id="match-pool-radio" className="event-section_form">
           <label className="event-section_form_input">
             <input
@@ -111,8 +111,8 @@ function DelegationSettings(props: {settings: Delegation, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Open Delegation</label>
-        <p>By default, delegates have the option to invite new people into the event by sending voice credits to their email address. Allow delegates to invite new people?</p>
+        <label>オープン委任状</label>
+        <p>デフォルトでは、代表者は、電子メールアドレスにボイスクレジットを送信することで、新しい人をイベントに招待するオプションがあります。代表者が新しい人を招待できるようにしますか？</p>
         <div className="event-section_form">
           <label className="event-section_form_input">
             <input
@@ -145,8 +145,8 @@ function DelegationSettings(props: {settings: Delegation, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Delegation End Date</label>
-        <p>When would you like this stage to end?</p>
+        <label>委任契約終了日</label>
+        <p>このステージはいつ終了させたいですか？</p>
         <div className="event-section_form">
           <Datetime
             className="event-section_datetime"
