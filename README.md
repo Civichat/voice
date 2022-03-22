@@ -1,173 +1,167 @@
-# RadicalxChange Voice
+# ボイス
 
-RxC Voice is an app for decentralized democratic governance. It is developed by RadicalxChange to model and experiment with a new democratic process for decentralized democracy that leverages Quadratic Funding, pol.is, and Quadratic Voting.
+Voiceは、分散型民主主義ガバナンスのためのアプリです。RadicalxChangeによって開発され、Quadratic Funding, pol.is, Quadratic Votingを活用した分散型民主主義のための新しい民主的プロセスのモデル化と実験を行っています。
 
-This repo also hosts RxC Conversations, a wrapper for Pol.is conversations held in the RadicalxChange community.
+## ローカルセットアップ - Docker
 
-## Local Setup - Docker
+Dockerを使用する方法は、開発者でない人や次のような人にお勧めします。
+すぐにプロジェクトを稼働させることができます。また、Dockerメソッドは
+docker-compose-prod.ymlを使用し、スピンアップすることができます。
+プロダクションコンテナ
 
-The Docker method is recommended for non-developers or anyone who wants to
-quickly get the project running off-the-shelf. The Docker method is also
-recommended for production. docker-compose-prod.yml can be used to spin up
-production containers.
+- Dockerのインストール
 
-- Install Docker
+- docker-composeのインストール（MacとWindowsのDocker Desktopに含まれています）。
 
-- Install docker-compose (included in Docker Desktop for Mac and Windows)
-
-- Clone project -
+- プロジェクトのクローン
 ```
-git clone --config core.autocrlf=input https://github.com/RadicalxChange/rxc-voice.git
-cd rxc-voice
+git clone --config core.autocrlf=input https://github.com/tkgshn/voice.git
+cd voice
 git checkout master
 ```
 
-- Create .env file and fill up suitable environment variables.
+- .envファイルを作成し、適切な環境変数を記入します。
 
 ```
 cp .env-example .env
 ```
 
-- Configure urls in `rxc-voice/src/utils/urls.ts` -- comment out the production urls and uncomment the local urls.
+- rxc-voice/src/utils/urls.ts` で urls を設定します -- 本番用の urls はコメントアウトし、ローカル用の urls はアンコメントします。
 
-- Build images and stand up containers (make sure docker is running first).
+- イメージをビルドし、コンテナを立ち上げます（最初にDockerが起動していることを確認してください）。
 ```
-# build and stand up containers
+# コンテナの構築と立ち上げ
 docker-compose -f docker-compose-voice.yml up --build
 ```
 
-OR
+または
 
 ```
-# build containers
+# コンテナを構築する
 docker-compose -f docker-compose-voice.yml build
-# then stand up containers
+# その後、コンテナを立ち上げる
 docker-compose -f docker-compose-voice.yml up
 ```
 
-- Create a superuser to access the admin site
+- 管理サイトにアクセスするためのスーパーユーザーを作成します。
 
 ```
-docker exec -it rxc-voice_api_1 ./manage.py createsuperuser
+docker exec -it voice-api-1 ./manage.py createsuperuser
 
 
-The project is now up and running -
+これでプロジェクトは稼働しました -。
 
-Backend API - http://127.0.0.1:8000
+バックエンドAPI - http://127.0.0.1:8000
 
 RxC Voice - http://localhost:4000
 ```
 
-## Deploy Instructions - virtual environment
+## デプロイ手順 - 仮想環境
 
-The virtual environment method takes a few extra steps to set up, but is great for lightweight, fast development. This is recommended for developers who are spending a non-trivial amount of time working on the project.
+仮想環境方式は、セットアップに少し余分な手順がかかりますが、軽量で高速な開発に最適です。プロジェクトに自明でない時間を費やしている開発者にお勧めします。
 
-- Install [PostgreSQL](https://www.postgresql.org/download/) and make sure it's running.
+- PostgreSQL](https://www.postgresql.org/download/)をインストールし、動作することを確認します。
 
-- Use [this guide](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment) to install pip and venv.
+- このガイド](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)を参考に、pipとvenvをインストールしてください。
 
-- Create a virtual environment to hold RxC Voice backend python packages
+- RxC Voice のバックエンドの Python パッケージを格納するための仮想環境を作成する。
 ```
-python3 -m venv ./venv/rxc-voice-backend
+python3 -m venv ./venv/voice-backend
 ```
 
-- Clone project -
+- プロジェクトのクローン
 ```
-git clone https://github.com/RadicalxChange/rxc-voice.git
+git clone https://github.com/tkgshn/voice.git
 cd rxc-voice
 git checkout master
 ```
 
-- Create .env file and fill up suitable environment variables
+- .envファイルを作成し、適切な環境変数を設定します。
 ```
 cp .env-example .env
 ```
 
-- Configure urls in `rxc-voice/src/utils/urls.ts` -- comment out the production urls and uncomment the local urls.
+- rxc-voice/src/utils/urls.ts` で urls を設定します -- 本番用の urls はコメントアウトし、ローカル用の urls はアンコメントしてください。
 
-- Activate your virtual environment
+- 仮想環境を有効にする
 ```
-source ./venv/rxc-voice-backend/bin/activate
+ソース ./venv/rxc-voice-backend/bin/activate
 ```
 
-- Install required python packages in your virtual environment
+- 仮想環境に必要なpythonパッケージをインストールします。
 ```
 cd backend/RxcVoiceApi
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt を実行します。
 ```
 
-- Make database migrations
+- データベースのマイグレーションを行う
 ```
-python manage.py makemigrations main
+python manage.py makemigrations メイン
 ```
 
-- Apply migrations
+- マイグレーションを適用する
 ```
 python manage.py migrate
 ```
 
-- Create a superuser to access the admin site
+- 管理サイトにアクセスするためのスーパーユーザーを作成する
 
 ```
 python manage.py createsuperuser
 ```
 
-- Start backend server
+- バックエンドサーバを起動します。
 ```
 python manage.py runserver
 ```
 
-- Open a new terminal window and install required frontend packages (your venv should not be activated)
+- 新しいターミナルウィンドウを開き、必要なフロントエンドパッケージをインストールします (venvは有効になっていないはずです)
 ```
 cd rxc-voice/rxc-voice
-npm install
+npmインストール
 ```
 
-- start frontend server
+- フロントエンドサーバを起動します。
 ```
-npm start
+npm スタート
 ```
 
-The project is now up and running -
+これでプロジェクトは起動しました -。
 
-Backend API - http://127.0.0.1:8000
+バックエンドAPI - http://127.0.0.1:8000
 
-RxC Voice - http://localhost:4000
+RxCボイス - http://localhost:4000
 
-## Creating users and accessing the site for testing
+## ユーザーの作成とテスト用サイトへのアクセス
 
-- Log in to the admin site at http://127.0.0.1:8000/admin
+- 管理者用サイト（http://127.0.0.1:8000/admin）にログインします。
 
-- Create a Group named "RxC Voice" -- any objects you create for RxC Voice must be added to this group.
+- RxC Voice」という名前のグループを作成します。RxC Voice用に作成するすべてのオブジェクトは、このグループに追加する必要があります。
 
-- Create a User. The login UI uses `username` but has the label `email` - to prevent confusion you should use the same email address for both the "Email address" field and the "Username" field. Add the user to the "RxC Voice" group you created in step 3.
+- ユーザーを作成します。ログインUIは`username`を使用しますが、`email`というラベルがあります。混乱を避けるために、"Email address "フィールドと "Username "フィールドの両方に同じメールアドレスを使用する必要があります。ステップ3で作成した "RxC Voice "グループに、このユーザーを追加します。
 
-- Now create a Delegate for the User you just created (The Delegate class is an extension/wrapper of the User class). If you have not set up email services, you can bypass the user verification process by checking "Is verified" and entering something into the "Public username" field.
+- 次に、作成したユーザのDelegateを作成します（Delegateクラスは、Userクラスの拡張/ラッパーです）。メールサービスを設定していない場合は、「Is verified」をチェックして、「Public username」フィールドに何かを入力すれば、ユーザー認証プロセスを回避することができます。
 
-- You should now be able to log in to the site with the test user's email and password.
+- これで、テストユーザーのメールアドレスとパスワードでサイトにログインできるはずです。
 
 ## Contribute
 
-For questions, comments, or troubleshooting, please feel free to open an issue on this repo. Our team currently includes only one full-time developer--any kind of contribution from the community is greatly appreciated!
+質問、コメント、トラブルシューティングについては、このレポにissueを作成してください。現在、私たちのチームにはフルタイムの開発者が一人しかいませんので、コミュニティからのどんな貢献も大いに歓迎します
 
-## Troubleshooting
+## トラブルシューティング
 
-### database "DATABASE_NAME" does not exist
+### データベース「DATABASE_NAME」が存在しない。
 
-If you are building your Docker containers, and the rxc-voice_api_1 throws this
-error, you probably have already initialized a database with another name.
+Dockerコンテナを構築しているときに、voice-api-1がこのようにスローした場合
+というエラーが出た場合、すでに別の名前のデータベースが初期化されている可能性があります。
 
-- connect to rxc-voice_db_1 and open shell
+- rxc-voice_db_1 に接続し、シェルを開いてください。
 
-`docker exec -it rxc-voice_db_1 bash`
+docker exec -it voice-db1 bash`を実行します。
 
-- open psql shell and list databases
+- psqlシェルを開き、データベースをリストアップします。
 
 `psql -U POSTGRES_USER
-postgres-# \l`
+ポストグレス-# \l`
 
-- copy the name of the correct database and update the value of POSTGRES_DB in your .env file
-
-## Chat with us
-
-Ask on Discord: https://discord.gg/  TcE9FKQb
+- 正しいデータベース名をコピーし、.envファイルのPOSTGRES_DBの値を更新してください。
