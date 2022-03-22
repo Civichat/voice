@@ -14,6 +14,7 @@ docker-compose-prod.ymlを使用し、スピンアップすることができま
 - docker-composeのインストール（MacとWindowsのDocker Desktopに含まれています）。
 
 - プロジェクトのクローン
+
 ```
 git clone --config core.autocrlf=input https://github.com/tkgshn/voice.git
 cd voice
