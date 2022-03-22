@@ -7,11 +7,11 @@ function DeliberationSettings(props: {settings: Conversation, reducer: any}) {
 
   return (
     <div className="event-section">
-      <label>Deliberation</label>
-      <p>Choose the settings for the Deliberation Stage</p>
+      <label>審議</label>
+      <p>熟議ステージの設定を選ぶ</p>
       <div className="event-section">
-        <label>Delegation Stage Title</label>
-        <p>Add a custom title to this stage.</p>
+        <label>熟議ステージの名前</label>
+        <p>熟議ステージの名前を決めましょう</p>
         <div className="event-section_form">
           <input
             type="text"
@@ -27,8 +27,8 @@ function DeliberationSettings(props: {settings: Conversation, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Deliberation Start Date</label>
-        <p>When would you like this stage to begin?</p>
+        <label>熟議を始める日</label>
+        <p>このステージをいつ開始しますか？</p>
         <div className="event-section_form">
           <Datetime
             className="event-section_datetime"
@@ -42,8 +42,8 @@ function DeliberationSettings(props: {settings: Conversation, reducer: any}) {
         </div>
       </div>
       <div className="event-section">
-        <label>Deliberation End Date</label>
-        <p>When would you like this stage to end?</p>
+        <label>熟議の終了日</label>
+        <p>いつ熟議を終了させますか？</p>
         <div className="event-section_form">
           <Datetime
             className="event-section_datetime"

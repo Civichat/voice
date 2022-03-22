@@ -73,17 +73,17 @@ function Account() {
                 //   }
                 // });
             } else {
-              console.error("Error", await data.json());
+              console.error("エラー", await data.json());
             }
           });
         // } else {
         //   alert.error("Please select a verification method")
         // }
       } else {
-        alert.error("Please enter a valid email address")
+        alert.error("有効なEメールアドレスを入力してください")
       }
     } else {
-      alert.error("Please fill all the fields")
+      alert.error("すべての項目にご記入ください。")
     }
   };
 

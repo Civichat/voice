@@ -72,26 +72,26 @@ function DelegationPage(props: {process: Process, delegation: Delegation, userDe
         closeModal={closeModal}
         userDelegate={props.userDelegate}
       />
-      <h1>Delegation</h1>
+      <h1>投票権の移譲</h1>
       <h2 className="content-header">{props.process.title}</h2>
       <div className="explain-text">
-        <p>Welcome to the RxC Voice democratic process! We want to make this decision democratically, so we have to start by deciding who gets to participate. Let’s start with why you’re here. Someone thought you should have a say in this decision, so they gave you some voice credits. Voice credits are used for voting in the election later on.</p>
+        <p>RxC Voiceの民主的プロセスへようこそ! 私たちはこの決定を民主的に行いたいので、誰が参加するのかを決めるところから始めなければなりません。まず、あなたがここにいる理由から始めましょう。誰かがこの決定についてあなたが発言すべきだと考え、あなたにボイスクレジットを与えました。ボイスクレジットはこの後の選挙での投票に使われます。</p>
         {props.delegation.allow_invites ? (
-          <p>Is there anyone you don’t see in the list below that you think should have a say? You can invite them yourself.</p>
+          <p>下のリストにない方で、発言したほうがいいと思われる方はいらっしゃいますか？自分で招待することができます。</p>
         ) : null}
         {props.delegation.allow_transfers ? (
           <>
-          <p>You can also give voice credits to someone who is already here if you trust them and want them to have greater influence in the election.{props.delegation.matching_pool !== MatchPoolMode.None ? " At the end of this stage, all voice credit transfers will be matched using Quadratic Funding! " : " "}If you want to save all of your credits for your own use in the election, that’s fine too.</p>
-          <p>Keep in mind, the threshold for participating in Delegation and Election is 25 voice credits. If you want to participate in the decision, <strong>make sure you keep at least 25 voice credits for yourself.</strong></p>
+          <p>また、すでにいる人を信頼し、その人に選挙でより大きな影響力を持たせたい場合は、ボイスクレジットを与えることができます。{props.delegation.matching_pool !== MatchPoolMode.None ? " この段階が終わると、すべてのクレジットの譲渡がQuadratic Fundingを使ってマッチングされることになります  " : " "}もし、選挙で使うためにすべてのクレジットを保存したいのであれば、それも結構です</p>
+          <p>Delegation and Electionに参加するための敷居は25ボイスクレジットであることに留意してください。判定に参加したい場合。 <strong>ボイスクレジットは最低でも25個は確保してください。</strong></p>
           </>
         ) : null}
-        <p>You can see who else is participating in this event below.</p>
+        <p>他の参加者は下記からご覧いただけます。.</p>
       </div>
       {delegationOngoing ? (
         <>
-        <p className="explain-text"><strong>The Delegation Stage closes on {moment(props.delegation.end_date).format('MMMM Do YYYY, h:mm a')}</strong></p>
+        <p className="explain-text"><strong>デレゲーションステージは、以下の日程で締め切ります。 {moment(props.delegation.end_date).format('MMMM Do YYYY, h:mm a')}</strong></p>
         {props.delegation.matching_pool === MatchPoolMode.Default ? (
-          <h3 className="matching-pool">The size of the matching pool will be 100 times the final number of delegates.</h3>
+          <h3 className="matching-pool">マッチングプールの規模は、最終的な代表者数の100倍となる予定です。</h3>
         ) : null}
         {props.delegation.allow_invites ? (
           <button
@@ -105,13 +105,13 @@ function DelegationPage(props: {process: Process, delegation: Delegation, userDe
         </>
       ) : (
         <>
-        <p className="explain-text"><strong>The Delegation Stage has concluded. You can see the final delegate list below!</strong></p>
+        <p className="explain-text"><strong>デレゲーションステージは終了しました。最終的な代表者名簿は以下からご覧いただけます。!</strong></p>
         {props.delegation.allow_transfers ? (
           <div className="transfers">
-            <h2>Your transfers</h2>
+            <h2>あなたの履歴</h2>
             <div className="transfers-header">
-              <h3 className="type">Type</h3>
-              <h3 className="amount">Amount</h3>
+              <h3 className="type">種類</h3>
+              <h3 className="amount">額</h3>
             </div>
             {transfers.length ? (
               <>
@@ -122,8 +122,8 @@ function DelegationPage(props: {process: Process, delegation: Delegation, userDe
                 </ul>
                 <div className="transfers-subtotals">
                   <div className="type">
-                    <h3>Subtotal</h3>
-                    <h3>Matching Funds Received</h3>
+                    <h3>小計</h3>
+                    <h3>受領したマッチングファンド</h3>
                   </div>
                   <div className="amount">
                     <h3>{(subtotal < 0) ? "- " : "+ "}{Math.abs(subtotal)} voice credits</h3>
@@ -131,12 +131,12 @@ function DelegationPage(props: {process: Process, delegation: Delegation, userDe
                   </div>
                 </div>
                 <div className="transfers-subtotals">
-                  <h3 className="total">Total Change</h3>
+                  <h3 className="total">最終変動額</h3>
                   <h3 className="total">{(subtotal + match < 0) ? "- " : "+ "}{Math.abs(subtotal + match)} voice credits</h3>
                 </div>
               </>
             ) : (
-              <h3>You did not send or receive any transfers.</h3>
+              <h3>送受信を行わなかった。</h3>
             )}
           </div>
         ) : null}
@@ -144,7 +144,7 @@ function DelegationPage(props: {process: Process, delegation: Delegation, userDe
       )}
       {props.process.delegates.filter(isVerified).length ? (
         <>
-          <h2>Delegates</h2>
+          <h2>代表者</h2>
           <ul className="delegate-list">
             {props.process.delegates
               .filter(isVerified)
@@ -165,7 +165,7 @@ function DelegationPage(props: {process: Process, delegation: Delegation, userDe
             </ul>
           </>
       ) : (
-        <h3>No delegates found.</h3>
+        <h3>代表者が見つかりませんでした.</h3>
       )}
     </div>
   );

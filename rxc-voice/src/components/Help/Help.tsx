@@ -16,7 +16,7 @@ function Help() {
   return (
     <div className="help">
       <h1 className="title">Help</h1>
-      <p>Is something not working the way you expect it to? Do you think you may have encountered a bug? Choose one of the options below to help us improve this app and resolve your issue.</p>
+      <p>何か期待通りに動いてくれないのでしょうか？バグに遭遇した可能性がありますか？以下のオプションのいずれかを選択して、このアプリの改善と問題の解決にご協力ください。</p>
       <ul className="bullets help-options">
         <li>
           <a

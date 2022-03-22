@@ -28,16 +28,16 @@ function CookieBanner(props:any) {
     <div className={`cookie-banner ${!showCookieBanner ? "closed" : ""}`}>
         {showPolicy ? (
           <span className="policy-long">
-            Welcome! With your consent, we would like to use a cookie to
-            identify you as a distinct voter. If you accept, we will store a
-            random number in your browser that tells us you've been here before.
-            This prevents double-voting. We do not store any information about
-            you or your device. If you decline, you won't be able to vote (you
-            can still post comments). Thanks for joining the conversation!
+            ようこそ あなたの同意を得て、私たちはクッキーを使用したいと思います。
+            あなたが有権者であることを確認します。ご承諾いただければ
+            あなたのブラウザに、あなたが以前ここに来たことがあることを示す乱数が記録されます。
+            これにより、二重投票を防ぐことができます。私たちは、あなたに関するいかなる情報も保存しません。
+            あなたやあなたのデバイス お断りした場合は、投票ができなくなります。
+            コメント投稿は可能です。） 会話に参加していただき、ありがとうございます
           </span>
         ) : (
           <span className="policy-short">
-            Please allow cookies if you would like to vote.
+            投票する場合は、Cookieを有効にしてください。
           </span>
         )}
         {showPolicy ? (

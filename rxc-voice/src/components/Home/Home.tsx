@@ -22,11 +22,11 @@ function Home() {
 
   return (
     <div className="home">
-      <h1 className="title">Welcome to RxC Voice</h1>
-      <p>RadicalxChange's platform for collective decision making!<br></br>
-      Click on a decision below to participate or see results.</p>
+      <h1 className="title">Voiceへようこそ</h1>
+      <p>RadicalxChange'の集団的意思決定の他、目のプラットフォーム<br></br>
+      参加や結果を見るには、以下の決定事項をクリックしてください</p>
       <div className="create-button">
-        <a href="/create-event">+ Create a new Event</a>
+        <a href="/create-event">+ イベントを追加する</a>
       </div>
       {activeProcesses?.length || pastProcesses?.length ? (
         <div className="content">

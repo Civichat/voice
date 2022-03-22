@@ -55,7 +55,7 @@ function ProcessPage() {
           </div>
         </div>
       ) : (
-        <h3>Sorry! Something went wrong. Return home to find what you are looking for.</h3>
+        <h3>ごめんなさい！何かが間違っていたようです。お探しのものを見つけるために、ホームに戻ってください。</h3>
       )
     ) : (
       <h3>Loading...</h3>

@@ -30,10 +30,10 @@ function Home(props:any) {
       <div className="about">
         <h1>RxC Conversations</h1>
         <span>
-          Welcome to RxC Conversations, RadicalxChange’s platform for
-          deliberation at scale! Click on a topic to share your insights,
-          engage with others, and push important conversations forward
-          with the power of Pol.is!
+        RxC Conversationsへようこそ！RxC ConversationsはRadicalxChangeのプラットフォームです。
+          スケールアップした熟議 トピックをクリックすると、あなたの洞察を共有することができます。
+          他の人と関わり、重要な会話を推し進める
+          Pol.isのパワーで
         </span>
         {!showAbout ? (
           <button
